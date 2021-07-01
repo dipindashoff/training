@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+        <test name="Read and extract from a JSON using Jayway JsonPath library">
+            <classes>
+                <class name="jsonpath.ReadFromJsonUsingJayway">
+                    <methods>
+                        <include name="getMovieTitleByID"/>
+                    </methods>
+                </class>
+            </classes>
+        </test>
+</suite>
