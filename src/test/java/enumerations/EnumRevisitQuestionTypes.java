@@ -26,7 +26,7 @@ public class EnumRevisitQuestionTypes {
     If questionType = 3, then ...
      */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidQtnTypeException {
         // Get value of QtnType
         System.out.println(QtnType.CATEGORICAL.getCode());
 
@@ -44,8 +44,10 @@ public class EnumRevisitQuestionTypes {
         intType = 1;
 
         // Map int to enum constants
-        qtnType = intToEnumQuestionType(intType);
+        qtnType = intToEnumQuestionTypeUsingIfElse(intType);
         qtnType = intToEnumQuestionTypeUsingHashMap(intType);
+        // Below is recommended
+        qtnType = intToEnumQuestionTypeUsingLoop(intType);
 
         // Perform operations
         if (qtnType != null) {
@@ -66,7 +68,7 @@ public class EnumRevisitQuestionTypes {
     /*
     METHOD 1: Map int to enum constants
      */
-    public static QtnType intToEnumQuestionType(int intType) {
+    public static QtnType intToEnumQuestionTypeUsingIfElse(int intType) {
 
         if (intType == QtnType.CATEGORICAL.getCode())
             return QtnType.CATEGORICAL;
@@ -88,5 +90,25 @@ public class EnumRevisitQuestionTypes {
         enumMap.put(3, QtnType.NEW_NUMERIC);
 
         return enumMap.get(intType);
+    }
+
+    /*
+    RECOMMENDED
+    METHOD 3: Map int to enum constants using for loop & values method
+    Convert enum constant to String or Integer and compare & return
+     */
+    public static QtnType intToEnumQuestionTypeUsingLoop(int intType) throws InvalidQtnTypeException {
+
+        for (QtnType qtnType : QtnType.values())
+            if (Integer.parseInt(qtnType.toString()) == (intType))
+                return qtnType;
+
+        throw new InvalidQtnTypeException("The selected question type, " + intType + " is not an applicable");
+    }
+
+    static class InvalidQtnTypeException extends Exception {
+        public InvalidQtnTypeException(String str) {
+            super(str);
+        }
     }
 }
