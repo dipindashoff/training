@@ -1,6 +1,7 @@
 package generics;
 
-public class NumericFns<T extends Number>{
+/* <T extends Number> --> T is always a Number */
+public class NumericFns<T extends Number> {
 
     T num;
 
@@ -8,7 +9,7 @@ public class NumericFns<T extends Number>{
         this.num = obj;
     }
 
-    public double square(){
+    public double square() {
         // return obj * obj; //Operator '*' cannot be applied to 'T', 'T' (without extends Number)
         // <T extends Number>  --> makes T always a number (not a String)
         return num.intValue() * num.doubleValue();
@@ -17,7 +18,7 @@ public class NumericFns<T extends Number>{
 
     // Here, iOb.absValue(dOb);
     // I/P param dOb should also be an integer
-    // So I cannot compare an Integer against a Double
+    // So I cannot compare an Integer against a Double as T can only be either Integer or Double never both
     //public boolean absValue(NumericFns<T> ob){
     /*
         Error when it was 'absValue(NumericFns<T> ob)'
@@ -26,9 +27,9 @@ public class NumericFns<T extends Number>{
     */
     // Replace NumericFns<T> with NumericFns<?> to accept any type
     // ? can be any Number Integer or Double
-    public boolean absValue(NumericFns<?> ob){
-        // Absolute value of ob.num == Absolute value of 'num'
-        if(Math.abs(num.doubleValue()) == Math.abs(ob.num.doubleValue()))
+    public boolean absValue(NumericFns<?> ob) {
+        // Absolute value of 'num' == Absolute value of ob.num
+        if (Math.abs(num.doubleValue()) == Math.abs(ob.num.doubleValue()))
             return true;
         return false;
     }

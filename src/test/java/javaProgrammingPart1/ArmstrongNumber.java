@@ -1,6 +1,10 @@
 package javaProgrammingPart1;
 
 public class ArmstrongNumber {
+
+	/*
+	NOTE: THIS ONLY WORKS IF A NUMBER IS A 3 DIGIT NUMBER
+	 */
 	
 	/*
 	 * Armstrong number is a number that is equal to the sum of cubes of its digits. 

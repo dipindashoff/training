@@ -34,7 +34,7 @@ public class TestWithGenerics {
 
     public static void genericExtendsNumber(){
         // Type parameter 'java.lang.String' is not within its bound; should extend 'java.lang.Number'
-        //NumericFns<String> numericFns = new NumericFns<>(10);
+//        NumericFns<String> numericFns = new NumericFns<>(10); // throws error
         NumericFns<Integer> numericFns = new NumericFns<>(10);
         System.out.println(numericFns.square());
     }

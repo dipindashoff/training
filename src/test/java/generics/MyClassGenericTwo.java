@@ -11,6 +11,7 @@ public class MyClassGenericTwo<T,V> {
     }
 
     public void getClassName() {
-        System.out.println(this.t.getClass().getName() + ", " + this.v.getClass().getName());
+        System.out.println(this.t.getClass().getName() + ", " + this.v.getClass().getName()); //java.lang.Integer, java.lang.Double
+//        System.out.println(this.t + ", " + this.v); // 10, 20.0
     }
 }

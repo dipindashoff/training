@@ -3,17 +3,18 @@ package javaProrgrammingPart2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Plaindrome {
+public class Palindrome {
 
 	public static void main(String[] args) {
 
 		// Check if a string is a palindrome
-//		String str = "abra";
+		String str = "abra";
+		str = "madam";
 
-//		if (isPalindromeString(str))
-//			System.out.println("Word is a palindrome");
-//		else
-//			System.out.println("Not a palindrome!");
+		if (isPalindromeString(str))
+			System.out.println(str + " is a palindrome");
+		else
+			System.out.println(str + "Not a palindrome!");
 
 		if (isPalindromeNumber(5665))
 			System.out.println("Palindrome!");

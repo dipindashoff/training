@@ -41,11 +41,11 @@ public class EnumRevisitQuestionTypes {
         System.out.println("qtnType = " + qtnType);
 
         int intType;
-        intType = 1;
+        intType = 2;
 
         // Map int to enum constants
-        qtnType = intToEnumQuestionTypeUsingIfElse(intType);
-        qtnType = intToEnumQuestionTypeUsingHashMap(intType);
+//        qtnType = intToEnumQuestionTypeUsingIfElse(intType);
+//        qtnType = intToEnumQuestionTypeUsingHashMap(intType);
         // Below is recommended
         qtnType = intToEnumQuestionTypeUsingLoop(intType);
 
@@ -99,9 +99,11 @@ public class EnumRevisitQuestionTypes {
      */
     public static QtnType intToEnumQuestionTypeUsingLoop(int intType) throws InvalidQtnTypeException {
 
-        for (QtnType qtnType : QtnType.values())
-            if (Integer.parseInt(qtnType.toString()) == (intType))
+        for (QtnType qtnType : QtnType.values()) {
+//            if (Integer.parseInt(qtnType.toString()) == (intType))
+            if (qtnType.getCode() == intType)
                 return qtnType;
+        }
 
         throw new InvalidQtnTypeException("The selected question type, " + intType + " is not an applicable");
     }

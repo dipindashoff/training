@@ -2,13 +2,13 @@ package generics;
 
 public class MyClassGeneric<T> {
 
-    T i;
+    T t;
 
-    public MyClassGeneric(T i) {
-        this.i = i;
+    public MyClassGeneric(T t) {
+        this.t = t;
     }
 
     public void print() {
-        System.out.println(this.i);
+        System.out.println(this.t);
     }
 }
