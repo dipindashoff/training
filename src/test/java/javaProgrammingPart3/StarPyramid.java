@@ -3,7 +3,7 @@ package javaProgrammingPart3;
 public class StarPyramid {
 
     public static void main(String[] args) {
-        int n = 4;
+        int n = 6;
         System.out.println("Right Pyramid");
         printHalfRIGHTPyramid(n);
         System.out.println("Left Pyramid");
@@ -14,7 +14,10 @@ public class StarPyramid {
         printFullPyramid(n);
         System.out.println("Build Full Pyramid from Left Pyramid");
         printFullPyramidFromLeftPyramid(n);
-
+        System.out.println("Reverse Full Pyramid with Numbers");
+        printReversePyramid(n);
+        System.out.println("Reverse Full Pyramid with Numbers with Mirror Image");
+        printSandClockPyramid(n);
     }
 
     /*(not recommended)*/
@@ -96,7 +99,7 @@ public class StarPyramid {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j <= n * 2 - 1; j++) {
                 if (j == n - i) {
-                    for (int k = 1; k <= 2*i + 1; k++)
+                    for (int k = 1; k <= 2 * i + 1; k++)
                         System.out.print("*");
                 } else
                     System.out.print(" ");
@@ -105,6 +108,43 @@ public class StarPyramid {
         }
     }
 
+    public static void printReversePyramid(int n) {
+
+        // Print 'j' number only if j > i
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (j > i)
+                    System.out.print(j + " ");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printSandClockPyramid(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (j > i)
+                    System.out.print(j + " ");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+
+            if(i == n-1) {
+                for (int k = 1; k < n; k++) {
+                    for (int j = 1; j <= n; j++) {
+                        if(j>=(n-k))
+                            System.out.print(j + " ");
+                        else
+                            System.out.print(" ");
+                    }
+                    System.out.println();
+                }
+            }
+        }
+    }
 }
 
 
