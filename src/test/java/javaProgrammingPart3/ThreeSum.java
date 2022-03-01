@@ -36,7 +36,8 @@ public class ThreeSum {
                         temp.add(a[j]);
                         temp.add(a[k]);
                         Collections.sort(temp);
-                        result.add(Arrays.asList(a[i], a[j], a[k]));
+//                        result.add(Arrays.asList(a[i], a[j], a[k])); // it includes duplicate triplets
+                        result.add(temp);
                     }
                 }
             }
