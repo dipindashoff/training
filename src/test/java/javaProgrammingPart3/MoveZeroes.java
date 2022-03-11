@@ -7,14 +7,17 @@ public class MoveZeroes {
         int a[] = {1, 0, 3, 0, 7, 4, 3, 0, 4};
 //        int a[] = {1, 2, 3, 0, 0, 7, 0, 9};
         pushZeroesToLeft(a);
-        pushZeroesToRight(a);
-        moveZeroesToRight(a);
-        moveZeroesToLeft(a);
+//        pushZeroesToRight(a);
+//        moveZeroesToRight(a);
+//        moveZeroesToLeft(a);
 
         for (int i : a)
             System.out.print(i + " ");
     }
 
+    /*
+    My Logic
+     */
     public static void pushZeroesToLeft(int[] a) {
         for (int i = 0; i < a.length; i++) {
             if (a[i] == 0) {
@@ -64,7 +67,7 @@ public class MoveZeroes {
     1 3 3 7 4 3 0 4 0 3 i=9, count=5
 
     if 'i'th element is non-zero, replace the item with the same index & number
-    if 'i'th element is zero, replace this index with the NEXT non-zero 'i'th element
+    if 'i'th element is zero, replace this index with the NEXT non-zero i.e. 'i'th element
      */
 
     public static void moveZeroesToRight(int[] nums) {
@@ -90,4 +93,5 @@ public class MoveZeroes {
             nums[count--] = 0;
         }
     }
+
 }
