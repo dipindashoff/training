@@ -9,7 +9,8 @@ public class RemoveDuplicatesInSortedArray {
 //        int[] nums = {0, 1, 1, 2, 2};
 //        int[] nums = {0, 1, 2, 3, 4};
 //        returnCountOfUniqueElements(nums);
-        returnCountOfUniqueElements2(nums);
+//        returnCountOfUniqueElements2(nums);
+        returnCountOfUniqueElements3(nums);
 
     }
 
@@ -53,6 +54,23 @@ public class RemoveDuplicatesInSortedArray {
         System.out.println("Count = " + count);
         for (int i : nums)
             System.out.print(i + " ");
+
+    }
+
+    /*
+    Another popular Leetcode Solution
+     */
+
+    public static void returnCountOfUniqueElements3(int[] nums) {
+
+        int i = nums.length > 0 ? 1 : 0;
+        for (int n : nums)
+            if (n > nums[i - 1])
+                nums[i++] = n;
+
+        System.out.println("Count = " + i);
+        for (int x : nums)
+            System.out.print(x + " ");
 
     }
 }
